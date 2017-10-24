@@ -1,0 +1,28 @@
+div#main{
+	width:300px;
+}
+div#inputData{
+	display: flex;
+	justify-content: space-around;
+}
+div#inputData input{
+	width:30%;
+}
+
+div#weekday{
+	overflow: hidden;
+}
+
+div#weekday div,div#days div{
+	width:14%;
+	float: left;
+	text-align: center;
+}
+
+a{
+	text-decoration: none;
+}
+input[type="text"]{
+	border:none;
+	text-align: center;
+}
