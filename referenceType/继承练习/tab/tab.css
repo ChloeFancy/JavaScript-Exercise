@@ -1,0 +1,36 @@
+body{
+	margin:0;
+}
+ul{
+	margin:0;
+	padding:0;
+	list-style: none;
+}
+a{
+	color:inherit;
+	text-decoration: none;
+}
+.box{
+	width:500px;
+	text-align: center;
+}
+
+.in,.in_active{
+	display:none;
+	height: 100px;
+	font-size: 50px;
+	line-height: 100px;
+}
+.in_active{
+	display:block;
+}
+.conList{
+	text-align: center;
+	line-height: 30px;
+}
+.con,.con_active{
+	outline: 0;
+}
+.con_active{
+	outline: 1px solid black;
+}
