@@ -245,6 +245,7 @@ var o2 = new MyObject();
 o2.publicMethod();//11
 //privateVaraible是每个对象的私有变量
 //不是属性！！属性都是共有的，在全局环境也可以随意访问读写的
+//纠错：属性的writable、configurable特性决定属性能否被读写、删除、特性能否被修改
 //和C++不一样
 //公共属性：属性
 //私有属性：私有变量
