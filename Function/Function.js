@@ -1,7 +1,11 @@
 //函数
 //函数表达式
 //函数声明，特点：声明提升
+//Function构造函数
+var foo = new Function('b','var a=b;returna a;');
+//最后一个参数才会被当作函数语句，前面的都是参数
 
+//如果没有return 相当于返回undefined
 if(condition){
 	function f(){
 
@@ -12,6 +16,26 @@ if(condition){
 	}
 }
 //无效的语法，因为函数声明会提升，大多数浏览器会声明后一个函数
+//因此可以使用函数表达式
+
+//如果函数声明和表达式同时采用来声明同一个函数
+var f = function(){
+	console.log('1');
+}
+function f(){
+	console.log('2');
+}
+//由于声明提升
+//相当于
+var f;
+function f(){
+	console.log('2');
+}
+f=function () {
+	// body...
+	console.log('1');
+}
+
 
 //递归
 function fact(num){
@@ -30,8 +54,105 @@ var fact = (function f(num){
 	}
 });//括号可以省略
 
+//函数的属性
+//name
+var f = function(){};
+console.log(f.name);//'f'
+console.log((function(){}).name);//''
+//length
+//定义函数时的参数个数
+//toString()
+//返回代码
+function f(){
+	var a=1;
+	return a;
+}
+function multiline(fn){
+	var arr = fn.toString().split('\n');
+	return arr.slice(1,arr.length-1).join('\n');
+}
+multiline(f);
+//"	var a=1;
+//	return a;"
+
+//函数的作用域：
+//是声明时的作用域，不是调用时的作用域
+var x=function(){
+	console.log(a);
+}
+function Y(f){
+	var a=2;
+	x();
+}
+Y(x);
+//Uncaught ReferenceError: a is not defined
+//x的作用域绑定在全局环境中
+
+function Y(){
+	var a=2;
+	var x=function(){
+		console.log(a);
+	};
+	x();
+}
+Y();//2
+//x在Y函数内部定义，作用域就绑定在函数的内部
+//在构造函数中，创建私有变量时，同理，只有在构造函数中创建的函数，才可以访问私有变量（作用域链）
+
+//函数传参：
+//如果缺少参数，则是undefined传入
+//也可以手动传入undefined
+//如何设置参数的默认值？
+function f(a){
+	a=a||1;
+	return a;
+}
+//但是如果a=0或''
+//也会返回1
+function f(a){
+	(a!=undefined&&a!=null)?a=a?a=1;
+	return a;
+}
+//1.pass by value，简单数据类型
+//2.pass by reference，引用类型，基本包装类型
+var o=[1,2];
+function f(o){
+	o=[1,2,3];
+}
+f(o);
+o;//[1,2]
+//o本来的值是[1,2]的引用，然后在函数中
+//o被赋值了[1,2,3]的引用
+
+//arguments与形参的关系
+function f(a,b){
+	arguments[0]=2;
+	arguments[1]=3;
+	return a+b;
+}
+f(0,0);//5
+//a,b与arguments动态地相互关联着
+//严格模式下，arguments是只读的
+Array.prototype.slice.call(arguments);
+
+//
 //闭包！！！
 //自己的理解就是函数的变量对象中包括了不是声明在自身的作用域中的变量
+//能够读取其他函数内部变量的函数
+//定义在一个函数内部的函数
+//
+function inc(num){
+	return function(){
+		num++;
+	}
+}
+var i = inc(5);
+i();//5
+i();//6
+//外层函数每次运行都会产生新的闭包
+//对内存的消耗很大
+//因为闭包总是包含了外层函数的内部变量
+
 
 function F(name){
 	return function(){
@@ -87,6 +208,24 @@ function assignHandler(){
 	console.log(now.getMonth()+1+'.'+now.getDate());
 })();
 alert(now);//Uncaught ReferenceError: now is not defined
+true&&function(){}();
+!function(){}()
+new function(){}
+new function(){}(arg)
+//不要让立即执行函数的函数声明出现在行首
+//Immediately-Invoked Function Expression
+//
+
+//eval
+//不会得到引擎的优化
+//1.直接调用——eval('');
+//作用域为当前所在的函数
+//2.间接调用
+var e = eval;
+e('');
+eval.call(null,'');
+window.eval('');
+//作用域为全局作用域
 
 //实现私有变量
 function MyObject(){
