@@ -138,11 +138,11 @@ function sayInfo(){
 
 //Prototype Mode
 function Person(){}
-Person.prototype.name = 'Chloe';
-Person.prototype.age = 20;
-Person.prototype.job = 'student';
-Person.prototype.sayName = function(){
-	alert(this.name);
+	Person.prototype.name = 'Chloe';
+	Person.prototype.age = 20;
+	Person.prototype.job = 'student';
+	Person.prototype.sayName = function(){
+		alert(this.name);
 };
 
 var p5 = new Person();
