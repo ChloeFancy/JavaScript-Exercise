@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>学校的教学评估表</title>
+    <meta charset="utf-8">
+</head>
+<body>
+<!--
+    学习了TreeWalker、NodeIterator。
+    遇到的问题：
+        1）td元素作为treewalker的currentNode时，如果只包含文本节点，无法遍历到该子节点，为null。
+        2）td元素节点的firstChild和children[0],前者得出一个文本节点，后者得出一个<select>元素节点.
+        解决：发现从浏览器上拷贝的代码中，<td>标签后<select>标签前有很多空格。
+-->
+<table class="tbllist">
+            <tr>
+                <th>#</th>
+                <th>课程号</th>
+                <th>课程名</th>
+                <th>教师</th>
+
+                    <th>你是否清楚本门课<br>程的目的和意义</th>
+
+                    <th>授课老师是否激发<br>了你的学习热情</th>
+
+                    <th>授课老师的教学<br>是否负责</th>
+
+                    <th>这门课程是否培养<br>了你的自学能力</th>
+
+            </tr>
+
+                <tr>
+                    <td>
+                        1
+                        <input id="classlist_0__TEnrollIDORG" name="classlist[0].TEnrollIDORG" type="hidden" value="7047593" />
+                        <input id="classlist_0__TEnrollID" name="classlist[0].TEnrollID" type="hidden" value="7047593" />
+                    </td>
+                    <td>0200R205</td>
+                    <td>考古发现与华夏文明</td>
+                    <td>张童心等</td>
+
+                        <td>
+                            <select Style="width:90px" id="classlist_0__ItemValue_0_" name="classlist[0].ItemValue[0]"><option value="0">请选择结果</option>
+<option selected="selected" value="25">非常清楚</option>
+<option value="20">比较清楚</option>
+<option value="15">一般</option>
+<option value="10">不清楚</option>
+</select>
+                        </td>
+
+                        <td>
+                            <select Style="width:90px" id="classlist_0__ItemValue_1_" name="classlist[0].ItemValue[1]"><option value="0">请选择结果</option>
+<option selected="selected" value="25">非常大</option>
+<option value="20">比较大</option>
+<option value="15">一般</option>
+<option value="10">很少</option>
+</select>
+                        </td>
+
+                        <td>
+                            <select Style="width:90px" id="classlist_0__ItemValue_2_" name="classlist[0].ItemValue[2]"><option value="0">请选择结果</option>
+<option selected="selected" value="25">非常负责</option>
+<option value="20">比较负责</option>
+<option value="15">一般</option>
+<option value="10">不负责</option>
+</select>
+                        </td>
+
+                        <td>
+                            <select Style="width:90px" id="classlist_0__ItemValue_3_" name="classlist[0].ItemValue[3]"><option value="0">请选择结果</option>
+<option selected="selected" value="25">非常大</option>
+<option value="20">比较大</option>
+<option value="15">一般</option>
+<option value="10">很少</option>
+</select>
+                        </td>
+
+                </tr>
+
+                <tr>
+                    <td>
+                        2
+                        <input id="classlist_1__TEnrollIDORG" name="classlist[1].TEnrollIDORG" type="hidden" value="7123947" />
+                        <input id="classlist_1__TEnrollID" name="classlist[1].TEnrollID" type="hidden" value="7123947" />
+                    </td>
+                    <td>08305008</td>
+                    <td>汇编语言程序设计</td>
+                    <td>刘颖群</td>
+
+                        <td>
+                            <select Style="width:90px" id="classlist_1__ItemValue_0_" name="classlist[1].ItemValue[0]"><option value="0">请选择结果</option>
+<option selected="selected" value="25">非常清楚</option>
+<option value="20">比较清楚</option>
+<option value="15">一般</option>
+<option value="10">不清楚</option>
+</select>
+                        </td>
+
+                        <td>
+                            <select Style="width:90px" id="classlist_1__ItemValue_1_" name="classlist[1].ItemValue[1]"><option value="0">请选择结果</option>
+<option selected="selected" value="25">非常大</option>
+<option value="20">比较大</option>
+<option value="15">一般</option>
+<option value="10">很少</option>
+</select>
+                        </td>
+
+                        <td>
+                            <select Style="width:90px" id="classlist_1__ItemValue_2_" name="classlist[1].ItemValue[2]"><option value="0">请选择结果</option>
+<option selected="selected" value="25">非常负责</option>
+<option value="20">比较负责</option>
+<option value="15">一般</option>
+<option value="10">不负责</option>
+</select>
+                        </td>
+
+                        <td>
+                            <select Style="width:90px" id="classlist_1__ItemValue_3_" name="classlist[1].ItemValue[3]"><option value="0">请选择结果</option>
+<option selected="selected" value="25">非常大</option>
+<option value="20">比较大</option>
+<option value="15">一般</option>
+<option value="10">很少</option>
+</select>
+                        </td>
+
+                </tr>
+
+                <tr>
+                    <td>
+                        3
+                        <input id="classlist_2__TEnrollIDORG" name="classlist[2].TEnrollIDORG" type="hidden" value="7123948" />
+                        <input id="classlist_2__TEnrollID" name="classlist[2].TEnrollID" type="hidden" value="7123948" />
+                    </td>
+                    <td>08305011</td>
+                    <td>操作系统(1)</td>
+                    <td>刘福岩</td>
+
+                        <td id='testtd'>
+                            <select Style="width:90px" id="classlist_2__ItemValue_0_" name="classlist[2].ItemValue[0]"><option value="0">请选择结果</option>
+<option selected="selected" value="25">非常清楚</option>
+<option value="20">比较清楚</option>
+<option value="15">一般</option>
+<option value="10">不清楚</option>
+</select>
+                        </td>
+
+                        <td>
+                            <select Style="width:90px" id="classlist_2__ItemValue_1_" name="classlist[2].ItemValue[1]"><option value="0">请选择结果</option>
+<option selected="selected" value="25">非常大</option>
+<option value="20">比较大</option>
+<option value="15">一般</option>
+<option value="10">很少</option>
+</select>
+                        </td>
+
+                        <td>
+                            <select Style="width:90px" id="classlist_2__ItemValue_2_" name="classlist[2].ItemValue[2]"><option value="0">请选择结果</option>
+<option selected="selected" value="25">非常负责</option>
+<option value="20">比较负责</option>
+<option value="15">一般</option>
+<option value="10">不负责</option>
+</select>
+                        </td>
+
+                        <td>
+                            <select Style="width:90px" id="classlist_2__ItemValue_3_" name="classlist[2].ItemValue[3]"><option value="0">请选择结果</option>
+<option selected="selected" value="25">非常大</option>
+<option value="20">比较大</option>
+<option value="15">一般</option>
+<option value="10">很少</option>
+</select>
+                        </td>
+
+                </tr>
+</table>
+</body>
+</html>
