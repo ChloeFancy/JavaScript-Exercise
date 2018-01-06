@@ -11,6 +11,9 @@
         1）td元素作为treewalker的currentNode时，如果只包含文本节点，无法遍历到该子节点，为null。
         2）td元素节点的firstChild和children[0],前者得出一个文本节点，后者得出一个<select>元素节点.
         解决：发现从浏览器上拷贝的代码中，<td>标签后<select>标签前有很多空格。
+            并且，firstChild是Node类的实例的引用，所以引用了文本子节点；
+            children是元素子节点的集合（其中的某个既是Node也是Element的实例）；
+            只有Element才有Children属性
 -->
 <table class="tbllist">
             <tr>
