@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>文本框的脚本</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<form>
+		<label for="textbox1">textbox1</label>
+		<input type="text" name="textbox1" id="textbox1" size="25" maxlength="50" value="初始值">
+		<!--
+		size特性：能够显示的字符数
+		maxlength特性：最多输入的字符数
+		-->
+		<label for="textArea">textArea</label>
+		<textarea id="textArea" rows="20" cols="30">初始值</textarea>
+		<!--
+		cols特性类似于textBox的size属性
+		-->
+	</form>
+
+	<form id="info">
+		<!--同一个label多个输入框-->
+		<input type="text" name="tel1" id="tel1" maxlength="3">
+		<input type="text" name="tel1" id="tel2" maxlength="3">
+		<input type="text" name="tel1" id="tel3" maxlength="4">
+
+		<label for="pwd">password:</label>
+		<input type="password" id="pwd" maxlength="8">
+	</form>
+
+	<form id="h5">
+		<input type="text" name="re" required>
+		<!--如果不填此字段，则点击submit，会出现“请填写此字段”-->
+		<label for="email">email: </label>
+		<input type="email" name="email" id="email">
+		<!--提交不合格的邮箱地址就会提示“请在电子邮件中包括@.....”-->
+		<label for="count">number: </label>
+		<input type="text" id="count" name="count" pattern="\d+">
+		<!--
+			pattern的值是RegExp的主体部分
+			提交时，如果不匹配，会提示“请与所请求的格式保持一致”-->
+		<button type="submit">submit</button>
+	</form>
+
+	<script type="text/javascript">
+
+	var isEmailSupported = (document.forms['h5'].elements['email'].type=='email');
+	//alert(isEmailSupported);
+	//true
+	//如果不支持type，type属性的返回值是“text”
+
+
+	(function(){
+		function tabForword(event){
+			var target = event.target||event.srcElement;
+			//访问maxlength特性的值，通过maxLength属性
+			if(target.value.length==target.maxLength){
+				if(target.nextElementSibling)
+					//label在focus后会将光标转移到对应的输入字段
+					//如果要判断节点的元素类型
+					//访问了nodeName属性后要加toLowerCase();
+					//alert(target.nextElementSibling.nodeName.toLowerCase());
+					target.nextElementSibling.focus();
+			}
+		}
+
+		var infoForm = document.forms['info'];
+		var elementsArr = Array.prototype.slice.call(infoForm.elements);
+
+		elementsArr.forEach(function(item,index,array){
+			item.addEventListener('keyup',tabForword,false);
+		});
+	})();
+
+	function getClipboardText(event){
+		var clipboardData = event.clipboardData||window.clipboardData;
+		return clipboardData.getData('text');
+		//参数：要取得数据的格式（text/URL）
+	}
+
+	function setClipboardData(event,value){
+		if(event.clipboardData){
+			return event.clipboardData.setData("text/plain", value);
+		}else if(window.clipboardData){
+			return window.clipboardData.setData('text',value);
+		}
+		//返回值是boolean
+	}
+
+	var textBox = document.forms[0].elements['textbox1'];
+	textBox.addEventListener('keypress',function(event){
+		var target = event.target||event.srcElement;
+		var character = event.charCode;
+		if(!/[^\d]/.test(String.fromCharCode(character))&&character>9&&!event.ctrlKey){
+			event.preventDefault();
+		}
+	},false);
+
+	textBox.addEventListener('copy',function(event){
+		/*var text = getClipboardText(event);
+		alert('text'+text);
+		不能通过getData获取到clipboardData的值
+		会返回一个空字符串
+		*/
+		setClipboardData(event,'123');
+		event.preventDefault();
+		//必须阻止默认行为，否则就复制选取内容到剪贴板
+		//取消了默认行为，才能把clipboardData的值复制到剪贴板
+	},false);
+
+	textBox.addEventListener('paste',function(event){
+		var text = getClipboardText(event);
+		//Firefox Safari Chrome只允许在onpaste事件中访问getData()
+		if(!/^\d*$/.test(text)){
+			alert('不能粘贴非数字！');
+			event.preventDefault();
+		}
+
+		//在paste事件中，不能使用setData方法
+		//setClipboardData(event,'123');
+	},false);
+
+
+	function getSelectedText(textBox){
+		if(typeof textBox.selectionStart=='number'){
+			return textBox.value.substring(textBox.selectionStart,textBox.selectionEnd);
+			//HTML5为文本框提供的两个属性
+		}else if(document.selection){
+			return document.selection.createRange().text;
+			//document.selection对象保存着在整个文档范围内饿选择的文本信息
+		}
+	}
+	textBox.addEventListener('select',function(event){
+		alert(getSelectedText(event.target));
+		//在select事件处理程序中，可以确保document.selection一定是target文本框中的value（的子集
+	},false);
+
+	//选择制定的范围文本
+	//会触发select事件
+	function selectText(textBox,start,end){
+		if(textBox.setSelectionRange){
+			textBox.setSelectionRange(start,end);
+		}else if(textBox.createTextRange){
+			var range = textBox.createTextRange();
+			range.collapse(true);
+			range.moveStart(start);
+			range.moveEnd(end);
+			range.select();
+		}
+		textBox.focus();
+		//选择范围之后立即将焦点设置到当前文本框
+	}
+	selectText(textBox,0,3);
+	</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title表单们</title>
+</head>
+<body>
+	<form name="form1">
+		<input type="text" name="textInput">
+		<input type="radio" name="test" value="1">
+		<input type="radio" name="test" value="1">
+		<input type="radio" name="test" value="1">
+		<input type="reset" value="reset value" name="reset">
+		<input type="submit" value="Submit form" name="submit">
+	</form>
+
+	<form name="form2">
+		<button type="reset" name="reset" autofocus>reset value</button>
+		<button type="submit">Submit Form</button>
+	</form>
+
+	<form>
+		<input type="image" src="btn.png">
+	</form>
+	<!--
+		控件获得焦点，按回车，控件对应的表单control.form会提交（前提是有以上三种之一的提交按钮。
+		请求发送给服务器之前会触发submit事件
+	-->
+</body>
+</html>
