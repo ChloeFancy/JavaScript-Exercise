@@ -29,18 +29,26 @@
 		<input type="password" id="pwd" maxlength="8">
 	</form>
 
+
 	<form id="h5">
+	<!--
+		<form id="h5" novalidate>
+		如果有nonvalidate特性，则不会验证，直接提交
+	-->
 		<input type="text" name="re" required>
 		<!--如果不填此字段，则点击submit，会出现“请填写此字段”-->
 		<label for="email">email: </label>
-		<input type="email" name="email" id="email">
+		<input type="email" name="email" id="email" >
+		<!--formnonvaldate特性可以让某个-->
 		<!--提交不合格的邮箱地址就会提示“请在电子邮件中包括@.....”-->
 		<label for="count">number: </label>
 		<input type="text" id="count" name="count" pattern="\d+">
 		<!--
 			pattern的值是RegExp的主体部分
 			提交时，如果不匹配，会提示“请与所请求的格式保持一致”-->
-		<button type="submit">submit</button>
+		<button type="submit" formnovalidate>nonvalidate submit</button>
+		<!--有formnonvalidate特性的提交按钮不会验证表单，可以直接提交-->
+		<button type="submit" >submit</button>
 	</form>
 
 	<script type="text/javascript">

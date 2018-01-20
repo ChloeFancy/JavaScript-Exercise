@@ -98,6 +98,16 @@ textBox.addEventListener('keypress',function(event){
 		event.preventDefault();
 	}
 },false);
+//只在"可编辑区域"内输入"实际字符(可以自动排除退格键等)"时才会触发
+//DOM3方法
+textBox.addEventListener('textInput',function(event){
+	var target = event.target||event.srcElement;
+	var character = event.charCode;
+	if(!/[^\d]/.test(String.fromCharCode(character))&&character>9&&!event.ctrlKey){
+		event.preventDefault();
+	}
+},false);
+
 
 textBox.addEventListener('copy',function(event){
 	/*var text = getClipboardText(event);
@@ -141,3 +151,11 @@ infoForm.elements[0].addEventListener('keyup',
 					target.nextElementSibling.focus();
 			}
 		},false);
+
+
+if (document.forms[0].elements[0].checkValidity()) {
+	//检测标签中H5新特性中的有效性
+}
+if(document.forms[0].checkValidity()){
+	//检查整个表单中所有字段的有效性
+}

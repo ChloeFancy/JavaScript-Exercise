@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>selectBox</title>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<legend>select-one</legend>
+			<select id="oneSelect">
+				<!--HTMLOptionElement-->
+				<option value="Sunnyvale">SunnyVale</option>
+				<option value="LA">LA</option>
+				<option value="Mountain View">Mountain View</option>
+				<option value="">China</option>
+				<!--选择了这一项，value==''-->
+				<option>Australia</option>
+				<!--选了这一项，value=="Australia"-->
+			</select>
+			<button type="button" id="first">选择第一个</button>
+			<button type="button" id="last">选择最后一个</button>
+
+		</fieldset>
+
+	</form>
+
+	<form style="margin-top: 20px;">
+	<fieldset>
+		<legend>select-mutiple</legend>
+		<select multiple id="multipleSelect">
+			<!--HTMLOptionElement-->
+			<option value="Sunnyvale">SunnyVale</option>
+			<option value="LA">LA</option>
+			<option value="Mountain View">Mountain View</option>
+			<option value="">China</option>
+			<!--选择了这一项，value==''-->
+			<option>Australia</option>
+			<!--选了这一项，value=="Australia"-->
+		</select>
+		<button type="button" id="firstChosen">只选择第一个</button>
+		<button type="button" id="lastChosen">新增选择最后一个</button>
+		<button type="button" id="selectedOps">显示当前已选的选项的值</button>
+		<button type="button" id="remove">移除所有选项</button>
+		<button type="button" id="transfer">跨selectbox移动选项</button>
+		<button type="button" id="resort">在selectBox内调整顺序</button>
+	</fieldset>
+
+	</form>
+	<script type="text/javascript" src="scripts/selectBox.js"></script>
+</body>
+</html>
