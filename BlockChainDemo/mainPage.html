@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BlockChain Demo</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style/main.css">
+	<link rel="stylesheet" type="text/css" href="style/mainPage.css">
+</head>
+<body>
+	<nav>
+		<div class="navItem">BlockChain Demo</div>
+		<div class="navItem"><a href="mainPage.html">Block</a></div>
+		<div class="navItem"><a href="blockchain.html">BlockChain</a></div>
+		<div class="navItem"><a href="Distributed.html">Distributed</a></div>
+	</nav>
+	<div class="block">
+		<h1>Block</h1>
+		<div id="box">
+			<form>
+				<p>
+					<label for='Block'>Block: </label>
+					<input type="text" id="Block" value="1" class="input">
+				</p>
+				<p>
+					<label for='nonce'>Nonce: </label>
+					<input type="text" id="nonce" class="input">
+				</p>
+				<p>
+					<label for='data'>Data: </label>
+					<textarea id="data" class="input">Some Data</textarea>
+					<!-- <input type="text" id="data"> -->
+				</p>
+			</form>
+
+			<p>
+				<label for='hash'>Hash: </label>
+				<input type="text" id="hash" disabled="true">
+			</p>
+			<p>
+				<label style="visibility: hidden;">1</label>
+				<button id="mine">Mine</button>
+			</p>
+		</div>
+	</div>
+	<script type="text/javascript" src="scripts/sha1.js"></script>
+	<script type="text/javascript" src="scripts/mine.js"></script>
+
+
+</body>
+</html>
