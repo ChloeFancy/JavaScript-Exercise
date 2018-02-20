@@ -1,5 +1,7 @@
 function windowListener(event,blocks){
 	var target = event.target;
+	if(target.nodeName.toUpperCase()!='INPUT'&&target.nodeName.toUpperCase()!='TEXTAREA')
+		return ;
 	for(var i=0,len=blocks.length;i<len;i++){
 		if(blocks[i].contains(target)){
 			break;

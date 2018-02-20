@@ -14,7 +14,9 @@ for(var i=0,len=blocks.length;i<len;i++){
 
 	if(i>0)
 		prev.value = pre;
+
     nonce.value = mineSomeBlock(blocks[i]);
+    pre = hash.value;
 
     blocks1[i].querySelector("input#nonce").value=nonce.value;
 	blocks1[i].querySelector("input#hash").value=hash.value;

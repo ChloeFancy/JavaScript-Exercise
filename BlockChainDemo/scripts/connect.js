@@ -9,8 +9,8 @@
 
 		if(i>0)
 			prev.value = pre;
-
         nonce.value = mineSomeBlock(blocks[i]);
+        pre = hash.value;
 	}
 	//mine buttons
 	for(var i=0,len=blocks.length;i<len;i++){

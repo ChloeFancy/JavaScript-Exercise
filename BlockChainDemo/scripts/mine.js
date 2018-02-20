@@ -14,7 +14,7 @@
     mine.addEventListener('click',function(event){
 
         document.getElementById('box').style.backgroundColor='lightblue';
-        nonce.value = mineSomeBlock(blocks[i]);
+        nonce.value = mineSomeBlock(block);
     },false);
     function hashCal(event){
         hash.value = SHA1(getStr(block));
