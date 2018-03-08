@@ -135,7 +135,7 @@
 		}
 	}
 	function addURLParam(url,key,value){
-		url+=( /\?/.test(url)==0 ? '?':'&' )+encodeURIComponent(key)+'='+encodeURIComponet(value);
+		url+=( /\?/.test(url)==0 ? '?':'&' )+encodeURIComponent(key)+'='+encodeURIComponent(value);
 		return url;
 	}
 })();
