@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BlockChain Demo</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style/main.css">
+	<link rel="stylesheet" type="text/css" href="style/chainBlock.css">
+
+</head>
+<body>
+	<nav>
+		<div class="navItem">BlockChain Demo</div>
+		<div class="navItem"><a href="mainPage.html">Block</a></div>
+		<div class="navItem"><a href="blockchain.html">BlockChain</a></div>
+		<div class="navItem"><a href="Distributed.html">Distributed</a></div>
+	</nav>
+	</div>
+
+	<div class="peer">
+	<h1>1</h1>
+	<div id="blockchain">
+
+		<div class="block">
+			<form>
+				<p>
+					<label for='Block'>Block: </label>
+					<input type="text" id="Block" value="1" class="input" disabled>
+				</p>
+				<p>
+					<label for='nonce'>Nonce: </label>
+					<input type="text" id="nonce" class="input">
+				</p>
+				<p>
+					<label for='data'>Data: </label>
+					<textarea id="data" class="input">Some Data</textarea>
+					<!-- <input type="text" id="data"> -->
+				</p>
+				<p>
+					<label for='prev'>Pre: </label>
+					<input type="text" id="pre" class="input" value="" disabled>
+				</p>
+			</form>
+
+			<p>
+				<label for='hash'>Hash: </label>
+				<input type="text" id="hash" disabled="true">
+			</p>
+			<p>
+				<label style="visibility: hidden;">1</label>
+				<button id="mine">Mine</button>
+			</p>
+		</div>
+		<div class="block">
+			<form>
+				<p>
+					<label for='Block'>Block: </label>
+					<input type="text" id="Block" value="2" class="input" disabled>
+				</p>
+				<p>
+					<label for='nonce'>Nonce: </label>
+					<input type="text" id="nonce" class="input">
+				</p>
+				<p>
+					<label for='data'>Data: </label>
+					<textarea id="data" class="input">Some Data</textarea>
+					<!-- <input type="text" id="data"> -->
+				</p>
+				<p>
+					<label for='prev'>Pre: </label>
+					<input type="text" id="pre" class="input" disabled>
+				</p>
+			</form>
+
+			<p>
+				<label for='hash'>Hash: </label>
+				<input type="text" id="hash" disabled="true">
+			</p>
+			<p>
+				<label style="visibility: hidden;">1</label>
+				<button id="mine">Mine</button>
+			</p>
+		</div>
+		<div class="block">
+			<form>
+				<p>
+					<label for='Block'>Block: </label>
+					<input type="text" id="Block" value="3" class="input" disabled>
+				</p>
+				<p>
+					<label for='nonce'>Nonce: </label>
+					<input type="text" id="nonce" class="input">
+				</p>
+				<p>
+					<label for='data'>Data: </label>
+					<textarea id="data" class="input">Some Data</textarea>
+					<!-- <input type="text" id="data"> -->
+				</p>
+				<p>
+					<label for='prev'>Pre: </label>
+					<input type="text" id="pre" class="input" disabled>
+				</p>
+			</form>
+
+			<p>
+				<label for='hash'>Hash: </label>
+				<input type="text" id="hash" disabled="true">
+			</p>
+			<p>
+				<label style="visibility: hidden;">1</label>
+				<button id="mine">Mine</button>
+			</p>
+		</div>
+		<div class="block">
+			<form>
+				<p>
+					<label for='Block'>Block: </label>
+					<input type="text" id="Block" value="4" class="input" disabled>
+				</p>
+				<p>
+					<label for='nonce'>Nonce: </label>
+					<input type="text" id="nonce" class="input">
+				</p>
+				<p>
+					<label for='data'>Data: </label>
+					<textarea id="data" class="input">Some Data</textarea>
+					<!-- <input type="text" id="data"> -->
+				</p>
+				<p>
+					<label for='prev'>Pre: </label>
+					<input type="text" id="pre" class="input" disabled>
+				</p>
+			</form>
+
+			<p>
+				<label for='hash'>Hash: </label>
+				<input type="text" id="hash" disabled="true">
+			</p>
+			<p>
+				<label style="visibility: hidden;">1</label>
+				<button id="mine">Mine</button>
+			</p>
+		</div>
+		<div class="block">
+			<form>
+				<p>
+					<label for='Block'>Block: </label>
+					<input type="text" id="Block" value="5" class="input" disabled>
+				</p>
+				<p>
+					<label for='nonce'>Nonce: </label>
+					<input type="text" id="nonce" class="input">
+				</p>
+				<p>
+					<label for='data'>Data: </label>
+					<textarea id="data" class="input">Some Data</textarea>
+					<!-- <input type="text" id="data"> -->
+				</p>
+				<p>
+					<label for='prev'>Pre: </label>
+					<input type="text" id="pre" class="input" disabled>
+				</p>
+			</form>
+
+			<p>
+				<label for='hash'>Hash: </label>
+				<input type="text" id="hash" disabled="true">
+			</p>
+			<p>
+				<label style="visibility: hidden;">1</label>
+				<button id="mine">Mine</button>
+			</p>
+		</div>
+	</div>
+	</div>
+
+	<div class="peer">
+	<h1>2</h1>
+	<div id="blockchain">
+
+		<div class="block">
+			<form>
+				<p>
+					<label for='Block'>Block: </label>
+					<input type="text" id="Block" value="1" class="input" disabled>
+				</p>
+				<p>
+					<label for='nonce'>Nonce: </label>
+					<input type="text" id="nonce" class="input">
+				</p>
+				<p>
+					<label for='data'>Data: </label>
+					<textarea id="data" class="input">Some Data</textarea>
+					<!-- <input type="text" id="data"> -->
+				</p>
+				<p>
+					<label for='prev'>Pre: </label>
+					<input type="text" id="pre" class="input" value="" disabled>
+				</p>
+			</form>
+
+			<p>
+				<label for='hash'>Hash: </label>
+				<input type="text" id="hash" disabled="true">
+			</p>
+			<p>
+				<label style="visibility: hidden;">1</label>
+				<button id="mine">Mine</button>
+			</p>
+		</div>
+		<div class="block">
+			<form>
+				<p>
+					<label for='Block'>Block: </label>
+					<input type="text" id="Block" value="2" class="input" disabled>
+				</p>
+				<p>
+					<label for='nonce'>Nonce: </label>
+					<input type="text" id="nonce" class="input">
+				</p>
+				<p>
+					<label for='data'>Data: </label>
+					<textarea id="data" class="input">Some Data</textarea>
+					<!-- <input type="text" id="data"> -->
+				</p>
+				<p>
+					<label for='prev'>Pre: </label>
+					<input type="text" id="pre" class="input" disabled>
+				</p>
+			</form>
+
+			<p>
+				<label for='hash'>Hash: </label>
+				<input type="text" id="hash" disabled="true">
+			</p>
+			<p>
+				<label style="visibility: hidden;">1</label>
+				<button id="mine">Mine</button>
+			</p>
+		</div>
+		<div class="block">
+			<form>
+				<p>
+					<label for='Block'>Block: </label>
+					<input type="text" id="Block" value="3" class="input" disabled>
+				</p>
+				<p>
+					<label for='nonce'>Nonce: </label>
+					<input type="text" id="nonce" class="input">
+				</p>
+				<p>
+					<label for='data'>Data: </label>
+					<textarea id="data" class="input">Some Data</textarea>
+					<!-- <input type="text" id="data"> -->
+				</p>
+				<p>
+					<label for='prev'>Pre: </label>
+					<input type="text" id="pre" class="input" disabled>
+				</p>
+			</form>
+
+			<p>
+				<label for='hash'>Hash: </label>
+				<input type="text" id="hash" disabled="true">
+			</p>
+			<p>
+				<label style="visibility: hidden;">1</label>
+				<button id="mine">Mine</button>
+			</p>
+		</div>
+		<div class="block">
+			<form>
+				<p>
+					<label for='Block'>Block: </label>
+					<input type="text" id="Block" value="4" class="input" disabled>
+				</p>
+				<p>
+					<label for='nonce'>Nonce: </label>
+					<input type="text" id="nonce" class="input">
+				</p>
+				<p>
+					<label for='data'>Data: </label>
+					<textarea id="data" class="input">Some Data</textarea>
+					<!-- <input type="text" id="data"> -->
+				</p>
+				<p>
+					<label for='prev'>Pre: </label>
+					<input type="text" id="pre" class="input" disabled>
+				</p>
+			</form>
+
+			<p>
+				<label for='hash'>Hash: </label>
+				<input type="text" id="hash" disabled="true">
+			</p>
+			<p>
+				<label style="visibility: hidden;">1</label>
+				<button id="mine">Mine</button>
+			</p>
+		</div>
+		<div class="block">
+			<form>
+				<p>
+					<label for='Block'>Block: </label>
+					<input type="text" id="Block" value="5" class="input" disabled>
+				</p>
+				<p>
+					<label for='nonce'>Nonce: </label>
+					<input type="text" id="nonce" class="input">
+				</p>
+				<p>
+					<label for='data'>Data: </label>
+					<textarea id="data" class="input">Some Data</textarea>
+					<!-- <input type="text" id="data"> -->
+				</p>
+				<p>
+					<label for='prev'>Pre: </label>
+					<input type="text" id="pre" class="input" disabled>
+				</p>
+			</form>
+
+			<p>
+				<label for='hash'>Hash: </label>
+				<input type="text" id="hash" disabled="true">
+			</p>
+			<p>
+				<label style="visibility: hidden;">1</label>
+				<button id="mine">Mine</button>
+			</p>
+		</div>
+	</div>
+	</div>
+
+	<div class="peer">
+	<h1>3</h1>
+	<div id="blockchain">
+
+		<div class="block">
+			<form>
+				<p>
+					<label for='Block'>Block: </label>
+					<input type="text" id="Block" value="1" class="input" disabled>
+				</p>
+				<p>
+					<label for='nonce'>Nonce: </label>
+					<input type="text" id="nonce" class="input">
+				</p>
+				<p>
+					<label for='data'>Data: </label>
+					<textarea id="data" class="input">Some Data</textarea>
+					<!-- <input type="text" id="data"> -->
+				</p>
+				<p>
+					<label for='prev'>Pre: </label>
+					<input type="text" id="pre" class="input" value="" disabled>
+				</p>
+			</form>
+
+			<p>
+				<label for='hash'>Hash: </label>
+				<input type="text" id="hash" disabled="true">
+			</p>
+			<p>
+				<label style="visibility: hidden;">1</label>
+				<button id="mine">Mine</button>
+			</p>
+		</div>
+		<div class="block">
+			<form>
+				<p>
+					<label for='Block'>Block: </label>
+					<input type="text" id="Block" value="2" class="input" disabled>
+				</p>
+				<p>
+					<label for='nonce'>Nonce: </label>
+					<input type="text" id="nonce" class="input">
+				</p>
+				<p>
+					<label for='data'>Data: </label>
+					<textarea id="data" class="input">Some Data</textarea>
+					<!-- <input type="text" id="data"> -->
+				</p>
+				<p>
+					<label for='prev'>Pre: </label>
+					<input type="text" id="pre" class="input" disabled>
+				</p>
+			</form>
+
+			<p>
+				<label for='hash'>Hash: </label>
+				<input type="text" id="hash" disabled="true">
+			</p>
+			<p>
+				<label style="visibility: hidden;">1</label>
+				<button id="mine">Mine</button>
+			</p>
+		</div>
+		<div class="block">
+			<form>
+				<p>
+					<label for='Block'>Block: </label>
+					<input type="text" id="Block" value="3" class="input" disabled>
+				</p>
+				<p>
+					<label for='nonce'>Nonce: </label>
+					<input type="text" id="nonce" class="input">
+				</p>
+				<p>
+					<label for='data'>Data: </label>
+					<textarea id="data" class="input">Some Data</textarea>
+					<!-- <input type="text" id="data"> -->
+				</p>
+				<p>
+					<label for='prev'>Pre: </label>
+					<input type="text" id="pre" class="input" disabled>
+				</p>
+			</form>
+
+			<p>
+				<label for='hash'>Hash: </label>
+				<input type="text" id="hash" disabled="true">
+			</p>
+			<p>
+				<label style="visibility: hidden;">1</label>
+				<button id="mine">Mine</button>
+			</p>
+		</div>
+		<div class="block">
+			<form>
+				<p>
+					<label for='Block'>Block: </label>
+					<input type="text" id="Block" value="4" class="input" disabled>
+				</p>
+				<p>
+					<label for='nonce'>Nonce: </label>
+					<input type="text" id="nonce" class="input">
+				</p>
+				<p>
+					<label for='data'>Data: </label>
+					<textarea id="data" class="input">Some Data</textarea>
+					<!-- <input type="text" id="data"> -->
+				</p>
+				<p>
+					<label for='prev'>Pre: </label>
+					<input type="text" id="pre" class="input" disabled>
+				</p>
+			</form>
+
+			<p>
+				<label for='hash'>Hash: </label>
+				<input type="text" id="hash" disabled="true">
+			</p>
+			<p>
+				<label style="visibility: hidden;">1</label>
+				<button id="mine">Mine</button>
+			</p>
+		</div>
+		<div class="block">
+			<form>
+				<p>
+					<label for='Block'>Block: </label>
+					<input type="text" id="Block" value="5" class="input" disabled>
+				</p>
+				<p>
+					<label for='nonce'>Nonce: </label>
+					<input type="text" id="nonce" class="input">
+				</p>
+				<p>
+					<label for='data'>Data: </label>
+					<textarea id="data" class="input">Some Data</textarea>
+					<!-- <input type="text" id="data"> -->
+				</p>
+				<p>
+					<label for='prev'>Pre: </label>
+					<input type="text" id="pre" class="input" disabled>
+				</p>
+			</form>
+
+			<p>
+				<label for='hash'>Hash: </label>
+				<input type="text" id="hash" disabled="true">
+			</p>
+			<p>
+				<label style="visibility: hidden;">1</label>
+				<button id="mine">Mine</button>
+			</p>
+		</div>
+	</div>
+	</div>
+	<script type="text/javascript" src="scripts/sha1.js"></script>
+	<script type="text/javascript" src="scripts/response.js"></script>
+	<!-- <script type="text/javascript" src="scripts/connect.js"></script> -->
+	<script type="text/javascript" src="scripts/peer.js"></script>
+
+</body>
+</html>

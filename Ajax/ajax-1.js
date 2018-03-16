@@ -7,7 +7,7 @@
 		var xhr = createHTR();
 		if(xhr){
 			xhr.onreadystatechange = function(){
-				if(xhr.readyState==XMLHttpRequest.DONE){
+				if(xhr.readyState==XMLHttpRequest.DONE){//4
 					if(xhr.status>=200&&xhr.status<300||xhr.status==304){
 						alert(xhr.responseText+" "+xhr.status);
 					}else{
@@ -109,6 +109,10 @@
 		var xhr = createHTR();
 		//为了避免诸多限制，在访问本地资源时尽量采用相对URL
 		if("withCredentials" in xhr){
+			//withCredentials——跨域请求是否提供凭据信息(cookie、HTTP认证及客户端SSL证明等)
+// 也可以简单的理解为，当前请求为跨域类型时是否在请求中协带cookie。
+// 如果在xhr中有此属性，则说明浏览器支持跨域
+
 			// IE11 CHROME FIREFOX
 			//诸多限制：不能使用setRequestHeader();getAllRequestHeader()返回""
 			//不能发送和接受cookie
