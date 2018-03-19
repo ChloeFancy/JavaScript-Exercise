@@ -43,15 +43,23 @@ label,input{
 	float:left;
 }
 
-#blockchain{
+#blockchain>div:nth-child(2){
 	width:100%;
 	display: flex;
 	flex-wrap: nowrap;
 	overflow: scroll;
 }
-
-button{
+#blockchain>div:first-child button{
 	padding: 5px;
+	margin: 0 auto;
+	display: block;
+	margin: 15px auto;
+}
+
+#blockchain form+button{
+	padding: 5px 20px;
+	display: block;
+	margin: 0 auto;
 }
 a{
 	color:darkgray;

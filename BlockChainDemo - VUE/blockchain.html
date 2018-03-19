@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="style/main.css">
 	<link rel="stylesheet" type="text/css" href="style/chainBlock.css">
 
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <body>
 	<nav>
@@ -17,163 +18,18 @@
 	</div>
 	<main>
 	<h1>BlockChain</h1>
+	<!-- <em>组件里面的全部要用小写！无论是标签名还是属性名</em> -->
 	<div id="blockchain">
+		<div><button @click='addBlock'>Add a new Block</button></div>
+		<div>
+			<ablock v-for='(item,index) in blockChain.chain' :key='item.num' :block='item' :bc='blockChain' :index='index'>
 
-		<div class="block">
-			<form>
-				<p>
-					<label for='Block'>Block: </label>
-					<input type="text" id="Block" value="1" class="input" disabled>
-				</p>
-				<p>
-					<label for='nonce'>Nonce: </label>
-					<input type="text" id="nonce" class="input">
-				</p>
-				<p>
-					<label for='data'>Data: </label>
-					<textarea id="data" class="input">Some Data</textarea>
-					<!-- <input type="text" id="data"> -->
-				</p>
-				<p>
-					<label for='prev'>Pre: </label>
-					<input type="text" id="pre" class="input" value="" disabled>
-				</p>
-			</form>
-
-			<p>
-				<label for='hash'>Hash: </label>
-				<input type="text" id="hash" disabled="true">
-			</p>
-			<p>
-				<label style="visibility: hidden;">1</label>
-				<button id="mine">Mine</button>
-			</p>
+			</ablock>
 		</div>
-		<div class="block">
-			<form>
-				<p>
-					<label for='Block'>Block: </label>
-					<input type="text" id="Block" value="2" class="input" disabled>
-				</p>
-				<p>
-					<label for='nonce'>Nonce: </label>
-					<input type="text" id="nonce" class="input">
-				</p>
-				<p>
-					<label for='data'>Data: </label>
-					<textarea id="data" class="input">Some Data</textarea>
-					<!-- <input type="text" id="data"> -->
-				</p>
-				<p>
-					<label for='prev'>Pre: </label>
-					<input type="text" id="pre" class="input" disabled>
-				</p>
-			</form>
-
-			<p>
-				<label for='hash'>Hash: </label>
-				<input type="text" id="hash" disabled="true">
-			</p>
-			<p>
-				<label style="visibility: hidden;">1</label>
-				<button id="mine">Mine</button>
-			</p>
-		</div>
-		<div class="block">
-			<form>
-				<p>
-					<label for='Block'>Block: </label>
-					<input type="text" id="Block" value="3" class="input" disabled>
-				</p>
-				<p>
-					<label for='nonce'>Nonce: </label>
-					<input type="text" id="nonce" class="input">
-				</p>
-				<p>
-					<label for='data'>Data: </label>
-					<textarea id="data" class="input">Some Data</textarea>
-					<!-- <input type="text" id="data"> -->
-				</p>
-				<p>
-					<label for='prev'>Pre: </label>
-					<input type="text" id="pre" class="input" disabled>
-				</p>
-			</form>
-
-			<p>
-				<label for='hash'>Hash: </label>
-				<input type="text" id="hash" disabled="true">
-			</p>
-			<p>
-				<label style="visibility: hidden;">1</label>
-				<button id="mine">Mine</button>
-			</p>
-		</div>
-		<div class="block">
-			<form>
-				<p>
-					<label for='Block'>Block: </label>
-					<input type="text" id="Block" value="4" class="input" disabled>
-				</p>
-				<p>
-					<label for='nonce'>Nonce: </label>
-					<input type="text" id="nonce" class="input">
-				</p>
-				<p>
-					<label for='data'>Data: </label>
-					<textarea id="data" class="input">Some Data</textarea>
-					<!-- <input type="text" id="data"> -->
-				</p>
-				<p>
-					<label for='prev'>Pre: </label>
-					<input type="text" id="pre" class="input" disabled>
-				</p>
-			</form>
-
-			<p>
-				<label for='hash'>Hash: </label>
-				<input type="text" id="hash" disabled="true">
-			</p>
-			<p>
-				<label style="visibility: hidden;">1</label>
-				<button id="mine">Mine</button>
-			</p>
-		</div>
-		<div class="block">
-			<form>
-				<p>
-					<label for='Block'>Block: </label>
-					<input type="text" id="Block" value="5" class="input" disabled>
-				</p>
-				<p>
-					<label for='nonce'>Nonce: </label>
-					<input type="text" id="nonce" class="input">
-				</p>
-				<p>
-					<label for='data'>Data: </label>
-					<textarea id="data" class="input">Some Data</textarea>
-					<!-- <input type="text" id="data"> -->
-				</p>
-				<p>
-					<label for='prev'>Pre: </label>
-					<input type="text" id="pre" class="input" disabled>
-				</p>
-			</form>
-
-			<p>
-				<label for='hash'>Hash: </label>
-				<input type="text" id="hash" disabled="true">
-			</p>
-			<p>
-				<label style="visibility: hidden;">1</label>
-				<button id="mine">Mine</button>
-			</p>
-		</div>
-	</div>
 	</main>
 
 	<script type="text/javascript" src="scripts/sha1.js"></script>
 	<script type="text/javascript" src="scripts/response.js"></script>
-	<script type="text/javascript" src="scripts/connect.js"></script>
+	<script type="text/javascript" src="scripts/chain.js"></script>
 </body>
 </html>
